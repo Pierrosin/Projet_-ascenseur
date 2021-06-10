@@ -1,3 +1,4 @@
+
 all : main
 
 FLAGS=-Wall -Werror -g
