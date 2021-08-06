@@ -38,7 +38,7 @@ PersonList *exitElevator(Elevator *e)
     {
         if (person_list->head->dest != floor)
         {
-            L = insert(person_list->head, L);
+            L = insert_end(person_list->head, L);
         }
         person_list = person_list->tail;
     }
@@ -48,12 +48,10 @@ PersonList *exitElevator(Elevator *e)
 
 PersonList *enterElevator(Elevator *e, PersonList *list)
 {
-    PersonList *person_list = e->persons;
     int capacity = e->capacity;
-    int floor = e->currentFloor;
     while (len(e->persons) < capacity && list)
     {
-        insert_end(list->head, e->persons);
+        e->persons = insert(list->head, e->persons);
         list = list->tail;
     }
     return list;
@@ -94,5 +92,5 @@ void stepElevator(Building *b)
 //     print_PersonList(L);
 //     print_PersonList(e->persons);
 //     L = exitElevator(e);
-//     print_PersonList(L);
+//     print_PersonList(e->persons);
 // }

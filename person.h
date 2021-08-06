@@ -23,7 +23,7 @@ PersonList *insert(Person *p, PersonList *plist);
 
 void print_PersonList(PersonList *liste);
 
-void insert_end(Person *p, PersonList *L);
+PersonList *insert_end(Person *p, PersonList *L);
 
 PersonList *removePerson(Person *p, PersonList *L);
 

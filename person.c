@@ -43,11 +43,11 @@ void print_PersonList(PersonList *liste)
     printf("]\n");
 }
 
-void insert_end(Person *p, PersonList *L)
+PersonList *insert_end(Person *p, PersonList *L)
 {
     if (!L)
     {
-        L = create_PersonList(p);
+        return create_PersonList(p);
     }
     else
     {
@@ -59,6 +59,7 @@ void insert_end(Person *p, PersonList *L)
             liste_tmp = liste_tmp->tail;
         }
         liste_tmp->tail = l;
+        return L;
     }
 }
 

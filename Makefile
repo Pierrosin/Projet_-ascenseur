@@ -6,14 +6,14 @@ FLAGS=-Wall -Werror -g
 main.o : main.c
 	gcc ${FLAGS} -c main.c
 
-date.o : date.c date.h
-	gcc ${FLAGS} -c date.c
+elevator.o : elevator.c elevator.h
+	gcc ${FLAGS} -c elevator.c
 
-liste.o : liste.c liste.h date.h
-	gcc ${FLAGS} -c liste.c
+person.o : person.c person.h elevator.h
+	gcc ${FLAGS} -c person.c
 
-main : main.o date.o liste.o
-	gcc ${FLAGS} -o main main.o date.o liste.o
+main : main.o elevator.o person.o
+	gcc ${FLAGS} -o main main.o elevator.o person.o -lncurses
 
 clean :
 	rm -f -rf *.o ./main
