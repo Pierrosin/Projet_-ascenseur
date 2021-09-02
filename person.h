@@ -1,28 +1,32 @@
 #ifndef PERSON_H
 #define PERSON_H
 
-typedef struct _Person {
+typedef struct _Person
+{
     int src;
     int dest;
 } Person;
 
-typedef struct _PersonList {
-    Person * head;
-    struct _PersonList * tail;
+typedef struct _PersonList
+{
+    Person *head;
+    struct _PersonList *tail;
 } PersonList;
 
-Person * createPerson( int src , int dest );
+Person *create_Person(int src, int dest);
 
-void print_Person( Person * p );
+void print_Person(Person *p);
 
-PersonList * create_PersonList( Person * p );
+PersonList *create_PersonList(Person *p);
 
-PersonList * insert( Person * p , PersonList * plist );
+PersonList *insert(Person *p, PersonList *plist);
 
-void print_PersonList( PersonList * liste );
+void print_PersonList(PersonList *liste);
 
-void insert_end( Person * p , PersonList * L );
+PersonList *insert_end(Person *p, PersonList *L);
 
-PersonList * removePerson( Person * p , PersonList * L );
+PersonList *removePerson(Person *p, PersonList *L);
+
+int len(PersonList *L);
 
 #endif
